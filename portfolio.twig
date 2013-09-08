@@ -1,0 +1,15 @@
+{% extends "content/post.twig" %}
+
+{% block content %}
+    <h1>$post.title by $post.people</h1>
+    <h3>$post.link</h3>
+    <h4>$post.description</h4>
+    <p>$post.body</p>
+    <img src="$post.preview">
+    <link  href="http://fotorama.s3.amazonaws.com/4.3.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://fotorama.s3.amazonaws.com/4.3.3/fotorama.js"></script> <!-- 13 KB -->
+    <div class="fotorama">
+        ${ feathers['portfolio'].image_list(post.gallery) }
+    </div>
+
+{% endblock %}
